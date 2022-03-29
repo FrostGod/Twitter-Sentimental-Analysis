@@ -1,0 +1,25 @@
+<h1>Twitter Sentimental Analyser</h1>
+<div>
+  <form class="container" [formGroup]="form" (ngSubmit)="saveDetails(form)">
+      <mat-form-field class="example-form-field" appearance="outline">
+          <mat-label>Tag name</mat-label>
+          <input matInput placeholder="Type tag" formControlName="tagName">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-form-field" appearance="outline">
+        <mat-label>Enter tweet</mat-label>
+        <input matInput placeholder="Type tweet" formControlName="tweet">
+      </mat-form-field>
+      <br>
+      <div>
+        <h4>Select your model:</h4>
+        <p><mat-checkbox formControlName="naiveByes">Naive Byes</mat-checkbox></p>
+        <p><mat-checkbox formControlName="baseLine">Base Line</mat-checkbox></p>
+        <p><mat-checkbox formControlName="decisionTree">Descison tree</mat-checkbox></p>
+        <p><mat-checkbox formControlName="svm">SVM</mat-checkbox></p>
+        <p><mat-checkbox formControlName="randomForest">Random Forest</mat-checkbox></p>
+      </div>
+      <br>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
