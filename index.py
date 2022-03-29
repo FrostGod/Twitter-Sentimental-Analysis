@@ -10,8 +10,9 @@ def topic(Topic: str, models: str):
     # print(models)
     models = models.split(',')
     print(models)
+    return {"data"}
     tweets = ft.get_tweets(Topic)
-    print(tweets)
+    # print(tweets)
     
     filename = "new_tweets.csv"
 
