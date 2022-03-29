@@ -2,10 +2,10 @@ import utils
 
 # Classifies a tweet based on the number of positive and negative words in it
 
-TRAIN_PROCESSED_FILE = '../train_tweet-processed.csv'
-TEST_PROCESSED_FILE = '../new_tweets-processed.csv'
-POSITIVE_WORDS_FILE = '../dataset/positive-words.txt'
-NEGATIVE_WORDS_FILE = '../dataset/negative-words.txt'
+TRAIN_PROCESSED_FILE = './train_tweet-processed.csv'
+TEST_PROCESSED_FILE = './new_tweets-processed.csv'
+POSITIVE_WORDS_FILE = './dataset/positive-words.txt'
+NEGATIVE_WORDS_FILE = './dataset/negative-words.txt'
 TRAIN = False
 
 
@@ -52,4 +52,4 @@ if __name__ == '__main__':
         print ('Correct = %.2f%%' % correct)
     else:
         predictions = classify(TEST_PROCESSED_FILE, test_file=(not TRAIN), positive_words=POSITIVE_WORDS_FILE, negative_words=NEGATIVE_WORDS_FILE)
-        utils.save_results_to_csv(predictions, 'baseline.csv')
+        utils.save_results_to_csv(predictions, './baseline.csv')

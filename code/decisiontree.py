@@ -7,10 +7,10 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 # Performs classification using Decision Tree.
 
-FREQ_DIST_FILE = '../train_tweet-processed-freqdist.pkl'
-BI_FREQ_DIST_FILE = '../train_tweet-processed-freqdist-bi.pkl'
-TRAIN_PROCESSED_FILE = '../train_tweet-processed.csv'
-TEST_PROCESSED_FILE = '../test_tweets-processed.csv'
+FREQ_DIST_FILE = './train_tweet-processed-freqdist.pkl'
+BI_FREQ_DIST_FILE = './train_tweet-processed-freqdist-bi.pkl'
+TRAIN_PROCESSED_FILE = './train_tweet-processed.csv'
+TEST_PROCESSED_FILE = './new_tweets-processed.csv'
 
 # True while training.
 TRAIN = False
@@ -167,5 +167,5 @@ if __name__ == '__main__':
             i += 1
         predictions = [(str(j), int(predictions[j]))
                        for j in range(len(test_tweets))]
-        utils.save_results_to_csv(predictions, 'decisiontree.csv')
+        utils.save_results_to_csv(predictions, './decisiontree.csv')
         print ('\nSaved to decisiontree.csv')
