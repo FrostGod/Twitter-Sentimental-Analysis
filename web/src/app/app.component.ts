@@ -20,7 +20,7 @@ export class AppComponent {
   });
   flag: string = '';
 
-  tweetsResponse: any;
+  tweetsResponse: any = [];
 
   constructor(public commonService: CommonService, private fb: FormBuilder) {}
 
