@@ -18,13 +18,38 @@ export class AppComponent {
     svm: false,
     randomForest: false,
   });
-  flag: boolean = true;
+  flag: string = '';
 
   constructor(public commonService: CommonService, private fb: FormBuilder) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  saveDetails(form: any) {
+    let queryParams = '';
+    if (this.flag === 'tweet') {
+      queryParams += 'tweet/' + form.value.tweet;
+    } else if (this.flag === 'tag') {
+      queryParams += 'topic/' + form.value.tagName;
+    }
+    queryParams += '?models=';
+    if (form.value.naiveByes) {
+      queryParams += 'nb,';
+    }
+    if (form.value.baseLine) {
+      queryParams += 'bl,';
+    }
+    if (form.value.decisionTree) {
+      queryParams += 'dt,';
+    }
+    if (form.value.svm) {
+      queryParams += 'svm,';
+    }
+    if (form.value.randomForest) {
+      queryParams += 'rf,';
+    }
+    queryParams = queryParams.slice(0, -1);
     this.commonService._get(
-      '',
+      queryParams,
       (res: any) => {
         console.log(res);
       },
@@ -32,9 +57,5 @@ export class AppComponent {
         console.log(err);
       }
     );
-  }
-
-  saveDetails(form: any) {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
   }
 }

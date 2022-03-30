@@ -10,7 +10,6 @@ export class CommonService {
   constructor(private http: HttpClient, public router: Router) {}
 
   _get(apiUrl: any, success: any, failure: any) {
-    apiUrl='US?models=nb';
     this.http.get(`${environment.serverUrl}${apiUrl}`).subscribe(
       (res) => {
         success(res);
