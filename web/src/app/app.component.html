@@ -31,3 +31,13 @@
     <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
   </form>
 </div>
+
+<div *ngIf="tweetsResposne.length>0" >
+  <mat-card *ngFor="let tweet of tweetsResposne">
+    <mat-card-title>{{tweet.id}}</mat-card-title>
+    <mat-card-subtitle>{{tweet.tweet}}</mat-card-subtitle>
+    <mat-card-actions align="end">
+      <diV>{{tweet.prediction===1 ? 'Positive Sentimental' : 'Negative Sentimental'}}</diV>
+    </mat-card-actions>
+  </mat-card>
+</div>

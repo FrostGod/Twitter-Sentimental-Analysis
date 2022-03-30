@@ -20,6 +20,8 @@ export class AppComponent {
   });
   flag: string = '';
 
+  tweetsResponse = [];
+
   constructor(public commonService: CommonService, private fb: FormBuilder) {}
 
   ngOnInit(): void {}
@@ -52,6 +54,7 @@ export class AppComponent {
       queryParams,
       (res: any) => {
         console.log(res);
+        this.tweetsResponse = res;
       },
       (err: any) => {
         console.log(err);
