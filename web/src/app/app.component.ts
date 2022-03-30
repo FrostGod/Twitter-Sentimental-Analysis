@@ -20,7 +20,7 @@ export class AppComponent {
   });
   flag: string = '';
 
-  tweetsResponse = [];
+  tweetsResponse: any;
 
   constructor(public commonService: CommonService, private fb: FormBuilder) {}
 
@@ -53,8 +53,12 @@ export class AppComponent {
     this.commonService._get(
       queryParams,
       (res: any) => {
-        console.log(res.length);
-        this.tweetsResponse = res;
+        let idx = 0;
+        console.log(res);
+        while (res[idx] !== undefined) {
+          this.tweetsResponse.push(res[idx]);
+          idx++;
+        }
       },
       (err: any) => {
         console.log(err);

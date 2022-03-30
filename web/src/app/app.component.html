@@ -34,10 +34,10 @@
 
 <div *ngIf="tweetsResponse.length>0" >
   <mat-card *ngFor="let tweet of tweetsResponse">
-    <mat-card-title>{{tweet}}</mat-card-title>
-    <mat-card-subtitle>{{tweet}}</mat-card-subtitle>
+    <mat-card-title>{{tweet.id}}</mat-card-title>
+    <mat-card-subtitle>{{tweet.tweet}}</mat-card-subtitle>
     <mat-card-actions align="end">
-      <diV>{{tweet}}</diV>
+      <diV>{{tweet.prediction===1 ? 'Positive Sentimental' : 'Negative Sentimental'}}</diV>
     </mat-card-actions>
   </mat-card>
 </div>
