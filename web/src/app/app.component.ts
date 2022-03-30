@@ -53,7 +53,7 @@ export class AppComponent {
     this.commonService._get(
       queryParams,
       (res: any) => {
-        console.log(res);
+        console.log(res.length);
         this.tweetsResponse = res;
       },
       (err: any) => {
