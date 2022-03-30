@@ -7,9 +7,9 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 # Performs classification using SVM.
 
-FREQ_DIST_FILE = './train_tweet-processed-freqdist.pkl'
-BI_FREQ_DIST_FILE = './train_tweet-processed-freqdist-bi.pkl'
-TRAIN_PROCESSED_FILE = './train_tweet-processed.csv'
+FREQ_DIST_FILE = './train_tweet2-processed-freqdist.pkl'
+BI_FREQ_DIST_FILE = './train_tweet2-processed-freqdist-bi.pkl'
+TRAIN_PROCESSED_FILE = './train_tweet2-processed.csv'
 TEST_PROCESSED_FILE = './new_tweets-processed.csv'
 TRAIN = False
 UNIGRAM_SIZE = 15000

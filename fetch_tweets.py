@@ -28,14 +28,7 @@ auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
 auth.set_access_token(accessToken, accessTokenSecret)
 api = tweepy.API(auth)
 
-
-#Sentiment Analysis
-def percentage(part,whole):
-    return 100 * float(part)/float(whole)
-
 def get_tweets(Topic):
-    # keyword = input("Please enter keyword or hashtag to search: ")
-    # noOfTweet = int(input ("Please enter how many tweets to analyze: "))
     noOfTweet = 10
     tweets = api.search_tweets(q=Topic, lang="en", count=noOfTweet)
     l = []
@@ -45,41 +38,4 @@ def get_tweets(Topic):
         l.append([cnt, tweet.text])
         cnt += 1
     return l
-    # positive = 0
-    # negative = 0
-    # neutral = 0
-    # polarity = 0
-    # tweet_list = []
-    # neutral_list = []
-    # negative_list = []
-    # positive_list = []
-    # cnt = 0
-    # for tweet in tweets:
-    #     cnt += 1
-    #     tweet_list.append(tweet.text)
-    #     analysis = TextBlob(tweet.text)
-    #     score = SentimentIntensityAnalyzer().polarity_scores(tweet.text)
-    #     neg = score['neg']
-    #     neu = score['neu']
-    #     pos = score['pos']
-    #     comp = score['compound']
-    #     polarity += analysis.sentiment.polarity
-    #     if neg > pos:
-    #         negative_list.append(tweet.text)
-    #         negative += 1
-    #     elif pos > neg:
-    #         positive_list.append(tweet.text)
-    #         positive += 1
-    #     elif pos == neg:
-    #         neutral_list.append(tweet.text)
-    #         neutral += 1
-    # print(cnt)
-    # positive = percentage(positive, noOfTweet)
-    # negative = percentage(negative, noOfTweet)
-    # neutral = percentage(neutral, noOfTweet)
-    # # polarity = percentage(polarity, noOfTweet)
-    # positive = format(positive, '.1f')
-    # negative = format(negative, '.1f')
-    # neutral = format(neutral, '.1f')
-    # print(positive, negative, neutral)
 

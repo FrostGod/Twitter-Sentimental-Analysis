@@ -7,11 +7,11 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 # Performs classification using Naive Bayes.
 
-FREQ_DIST_FILE = './train_tweet-processed-freqdist.pkl'
-BI_FREQ_DIST_FILE = './train_tweet-processed-freqdist-bi.pkl'
-TRAIN_PROCESSED_FILE = './train_tweet-processed.csv'
+FREQ_DIST_FILE = './train_tweet2-processed-freqdist.pkl'
+BI_FREQ_DIST_FILE = './train_tweet2-processed-freqdist-bi.pkl'
+TRAIN_PROCESSED_FILE = './train_tweet2-processed.csv'
 TEST_PROCESSED_FILE = './new_tweets-processed.csv'
-TRAIN = False
+TRAIN = True
 UNIGRAM_SIZE = 15000
 VOCAB_SIZE = UNIGRAM_SIZE
 USE_BIGRAMS = True

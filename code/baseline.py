@@ -2,7 +2,7 @@ import utils
 
 # Classifies a tweet based on the number of positive and negative words in it
 
-TRAIN_PROCESSED_FILE = './train_tweet-processed.csv'
+TRAIN_PROCESSED_FILE = './train_tweet2-processed.csv'
 TEST_PROCESSED_FILE = './new_tweets-processed.csv'
 POSITIVE_WORDS_FILE = './dataset/positive-words.txt'
 NEGATIVE_WORDS_FILE = './dataset/negative-words.txt'
