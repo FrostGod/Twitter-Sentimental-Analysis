@@ -47,6 +47,7 @@ def topic(Topic: str, models: str):
             data = json.load(json_file)
         return data
     if "svm" in models:
+        print("svm")
         os.system("python3 ./code/svm.py")
         make_json('./svm.csv', './svm.json', tweets)
         with open('svm.json') as json_file:
@@ -58,10 +59,24 @@ def topic(Topic: str, models: str):
         with open('dt.json') as json_file:
             data = json.load(json_file)
         return data
+    if "rf" in models:
+        os.system("python3 ./code/randomforest.py")
+        make_json('./randomforest.csv', './rf.json', tweets)
+        with open('rf.json') as json_file:
+            data = json.load(json_file)
+        return data
+    if "nb" in models:
+        os.system("python3 ./code/naivebayes.py")
+        make_json('./naivebayes.csv', './nb.json', tweets)
+        with open('nb.json') as json_file:
+            data = json.load(json_file)
+        return data
+    
 
 
 @app.get("/tweet/{tweet}")
 def topic(tweet: str, models: str):
+    print("hi")
     models = models.split(',')
     print(models)
     # tweets = ft.get_tweets(Topic)
@@ -90,5 +105,17 @@ def topic(tweet: str, models: str):
         os.system("python3 ./code/decisiontree.py")
         make_json('./decisiontree.csv', './dt.json', tweets)
         with open('dt.json') as json_file:
+            data = json.load(json_file)
+        return data
+    if "rf" in models:
+        os.system("python3 ./code/randomforest.py")
+        make_json('./randomforest.csv', './rf.json', tweets)
+        with open('rf.json') as json_file:
+            data = json.load(json_file)
+        return data
+    if "nb" in models:
+        os.system("python3 ./code/naivebayes.py")
+        make_json('./naivebayes.csv', './nb.json', tweets)
+        with open('nb.json') as json_file:
             data = json.load(json_file)
         return data
